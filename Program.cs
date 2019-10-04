@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarSimulator.Domain;
+using System;
 
 namespace CarSimulator
 {
@@ -9,9 +10,11 @@ namespace CarSimulator
 
             bool running = true;
 
+            Car[] carList = new Car[10];
+            uint carListCurrentIndexPosition = 0;
+
             while (running)
             {
-
                 Console.WriteLine("1. Add car");
                 Console.WriteLine("2. List cars");
                 Console.WriteLine("3. Simulate speed");
@@ -23,6 +26,18 @@ namespace CarSimulator
                 {
                     case ConsoleKey.D1:
                     case ConsoleKey.NumPad1:
+
+
+                        Console.Write("Brand: ");
+                        string brand = Console.ReadLine();
+
+
+                        Console.Write("Model: ");
+                        string model = Console.ReadLine();
+
+                        Car newCar = new Car(brand, model);
+
+                        carList[carListCurrentIndexPosition++] = newCar;
 
                         break;
 
