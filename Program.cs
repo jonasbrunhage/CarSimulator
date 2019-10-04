@@ -44,6 +44,16 @@ namespace CarSimulator
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
 
+                        Console.WriteLine("Brand        Model");
+                        Console.WriteLine("------------------------------");
+
+                        foreach (Car car in carList)
+                        {
+                            Console.WriteLine($"{car.GetBrand()}       {car.GetModel()}");
+                        }
+
+                        Console.WriteLine("<Press key to continue");
+                        Console.ReadKey();
                         break;
 
                     case ConsoleKey.D3:
